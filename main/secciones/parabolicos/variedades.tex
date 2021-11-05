@@ -1,0 +1,318 @@
+En esta secci\'{o}n, $G$ denota un grupo algebraico conexo sobre un cuerpo
+algebraicamente cerrado $k=\algclos k$. Asumimos, tambi\'{e}n, que $G$ es
+geom\'{e}tricamente reducido, o, lo que es lo mismo, un grupo algebraico suave,
+es decir, una variedad.%
+\footnote{
+	\cite[pp.~12,13]{MilneAlgebraicGroups}
+}
+
+\begin{defBorel}\label{def:borel}
+	\footnote{
+		\cite[Definition~17.6]{MilneAlgebraicGroups}
+	}
+	Un \emph{subgrupo de Borel} de $G$ es un subgrupo $B\leq G$ soluble,
+	conexo y maximal con respecto a estas propiedades.
+\end{defBorel}
+
+\begin{obsBorel}\label{obs:def:borel}
+	En esta secci\'{o}n --en particular, en la Definici\'{o}n~%
+	\ref{def:borel}-- ``subgrupo'' quiere decir subgrupo algebraico que
+	es subvariedad. En particular, un subgrupo de Borel $B\leq G$ es un
+	grupo algebraico \emph{suave}.%
+	\footnote{
+		El lunes hab\'{\i}a dicho, err\'{o}neamente, que no le
+		ped\'{\i}amos a $B$ que fuese suave.
+	}
+\end{obsBorel}
+
+Un grupo abstracto $G$ es \emph{soluble}, si existe una cadena finita de
+subgrupos
+\begin{align*}
+	& G \,=\, G_0\,\supset\,G_1\,\supset\,\cdots\,\supset\,G_s\,=\,e
+\end{align*}
+%
+tal que $G_{i+1}\triangleleft G_i$ y que cada cociente $G_i/G_{i+1}$ sea
+abeliano.
+
+\begin{ejemploTriangulares}\label{ejemplo:triangulares}
+	En $G=\GL[n]$, el subgrupo de matrices triangulares superiores
+	$B=\triangulares[n]$ es un subgrupo de Borel. Por ejemplo, para $n=4$,
+	\begin{align*}
+		\triangulares[4] \,=\,
+			\left[\begin{smallmatrix}
+				* & * & * & * \\
+				& * & * & * \\
+				& & * & * \\
+				& & & *
+			\end{smallmatrix}\right] & \,\supset\,
+			\mathsf{U}_4\,=\,\left[\begin{smallmatrix}
+				1 & * & * & * \\
+				& 1 & * & * \\
+				& & 1 & * \\
+				& & & 1
+			\end{smallmatrix}\right] \,\supset\,
+			\left[\begin{smallmatrix}
+				1 & 0 & * & * \\
+				& 1 & 0 & * \\
+				& & 1 & 0 \\
+				& & & 1
+			\end{smallmatrix}\right] \,\supset\,
+			\left[\begin{smallmatrix}
+				1 & 0 & 0 & * \\
+				& 1 & 0 & 0 \\
+				& & 1 & 0 \\
+				& & & 1
+			\end{smallmatrix}\right] \,\supset\,
+			\left[\begin{smallmatrix}
+				1 & 0 & 0 & 0 \\
+				& 1 & 0 & 0 \\
+				& & 1 & 0 \\
+				& & & 1
+			\end{smallmatrix}\right]
+	\end{align*}
+	%
+	Esta sucesi\'{o}n muestra, tambi\'{e}n, que $\unipotentes[4]$ es
+	\emph{nilpotente}.
+\end{ejemploTriangulares}
+
+Siguiendo con el Ejemplo~\ref{ejemplo:triangulares},
+
+\begin{propoTriangulares}\label{propo:triangulares}
+	todo subgrupo de Borel de $\GL[n]$ es conjugado a $\triangulares[n]$.
+\end{propoTriangulares}
+
+Un grupo algebraico $G$ (arbitrario) se dice \emph{triagonalizable},%
+\footnote{
+	\cite[Definition~16.1]{MilneAlgebraicGroups}
+}
+si toda representaci\'{o}n no nula posee un autovector. En tal caso, si
+$(V,\rho)$ es una representaci\'{o}n de dimensi\'{o}n $n<\infty$, existe una
+base de $V$ con respecto a la cual $\rho(G)\subset\triangulares[n]$. La
+demostraci\'{o}n de la Proposici\'{o}n~\ref{propo:triangulares} se basa en el
+siguiente resultado.
+
+\begin{teoLieKolchin}[Lie-Kolchin]\label{thm:liekolchin}
+	\footnote{
+		\cite[Theorem~16.30]{MilneAlgebraicGroups}
+	}
+	Sobre un cuerpo algebraicamente cerrado, un grupo algebraico suave y
+	conexo es soluble, si y s\'{o}lo si es triagonalizable.
+\end{teoLieKolchin}
+
+\begin{proof}[Demostraci\'{o}n de \ref{propo:triangulares}]
+	Sea $B\leq\GL[n]$ un subgrupo de Borel. De acuerdo con la
+	Observaci\'{o}n~\ref{obs:def:borel}, como $B$ es suave, conexo y
+	soluble, podemos aplicar el Teorema~\ref{thm:liekolchin}. Concluimos,
+	entonces, que la representaci\'{o}n $B\hookrightarrow\GL[k^n]$ admite
+	una base (de $k^n$) con respecto a la cual $B\subset\triangulares[n]$.
+	Dicho de otra manera, existe $g\in\GL[n](k)$ tal que
+	\begin{align*}
+		gBg^{-1} & \,\subset\,\triangulares[n]
+		\text{ .}
+	\end{align*}
+	%
+	Finalmente, por maximalidad de $B$, la inclusi\'{o}n anterior es una
+	igualdad.
+\end{proof}
+
+Podemos expresar la conclusi\'{o}n de la Proposici\'{o}n~%
+\ref{propo:triangulares} de una manera m\'{a}s invariante usando la noci\'{o}n
+de \emph{banderas}.
+
+Sea $V$ un $k$-espacio vectorial. Una \emph{bandera} en $V$ es una cadena
+finita
+\begin{equation}
+	\label{eq:bandera}
+	F \quad:\quad 0\,=\,V_0\,\subsetneq\,V_1\,\subsetneq\,\cdots\,
+		\subsetneq\,V_s\,=\,V
+\end{equation}
+%
+de subespacios de $V$. El \emph{estabilizador de una bandera $F$} como en
+\eqref{eq:bandera} es el subgrupo $B_F\leq\GL[V]$ m\'{a}s grande con la
+propiedad de que, para todo $i$
+\begin{align*}
+	B_F\,\cdot\,V_i & \,\subset\,V_i
+	\text{ .}
+\end{align*}
+%
+Decimos que una bandera como \eqref{eq:bandera} es \emph{maximal}, si
+$s=\dim\,V$; en tal caso, la codimensi\'{o}n de $V_{i-1}$ en $V_i$ es $1$.
+
+Sea $F$ una bandera maximal en $V$ y sea $B_F$ su estabilizador. Entonces,
+tomando como base de $V$ un conjunto de la forma $\{\lista{v}{s}\}$ tal que
+$v_i\in V_i\setmin V_{i-1}$, vemos que $B_F$ coincide con el grupo
+$\triangulares[n]$. Rec\'{\i}procamente, si $B\leq\GL[V]$ es un subgrupo de
+Borel, como $B$ es triagonalizable, existe $v_1\in V$ tal que
+$V_1:=\generado{v_1}$ es un autoespacio para la acci\'{o}n de $B$. Esta
+acci\'{o}n desciende al cociente $V/V_1$ y concluimos que existe
+$v_2\in V\setmin V_1$ tal que $V_2:=\generado{v_1,v_2}$ sea un autoespacio para
+$B$. Inductuvamente, por la ``triagonalizabilidad'' de $B$, podemos construir
+una bandera maximal $F=(V_i)_i$ tal que $B\cdot V_i\subset V_i$. En particular,
+$B\subset B_F$ y, por maximalidad de $B$ en tanto subgrupo soluble conexo,
+\begin{align*}
+	B & \,=\, B_F
+	\text{ .}
+\end{align*}
+%
+Es decir, los subgrupos de Borel de $\GL[V]$ son, exactamente, los
+estabilizadores de banderas en $V$ maximales. Por \'{u}ltimo, como $\GL[V]$
+act\'{u}a transitivamente en el conjunto de bases de $V$, concluimos que todos
+los subgrupos de Borel de $\GL[V]$ son conjugados (por un elemento de
+$\GL[V](k)$).
+
+Esta propiedad del grupo general lineal es v\'{a}lida en general.
+
+\begin{teoBorelConjugados}\label{thm:borelconjugados}
+	\footnote{
+		\cite[Theorem~17.9]{MilneAlgebraicGroups}
+	}
+	Dos subgrupos de Borel de $G$ son conjugados por un elemento de $G(k)$.
+\end{teoBorelConjugados}
+
+\begin{obsBorel}\label{obs:borel:existencia}
+	Existen subgrupos de Borel. Podemos empezar con cualquier subgrupo
+	conexo soluble (hay, al menos, uno: $\{e\}$) y considerar todos los
+	subgrupo conexos solubles que lo contienen. Los de dimensi\'{o}n
+	m\'{a}xima son los subgrupos de Borel.%
+	\footnote{
+		La \emph{dimensi\'{o}n} de un esquema irreducible de tipo
+		finito se define como el supremo (m\'{a}ximo) de las longitudes
+		de cadenas
+		\begin{align*}
+			Z & \,=\,Z_d\,\subset\,\cdots\,Z_1\,\subset\,Z_0
+		\end{align*}
+		%
+		de subesquemas cerrados \cite[\S~A.24]{MilneAlgebraicGroups}.
+		Por otro lado, los subgrupos algebraicos de un grupo algebraico
+		son cerrados para la topolog\'{\i}a Zariski
+		\cite[Proposition~1.41]{MilneAlgebraicGroups}. En particular,
+		si $H\leq H'\leq G$ son subgrupos, entonces o bien $H=H'$, o
+		bien $\dim H<\dim{H'}$.
+	}
+\end{obsBorel}
+
+Si $T\leq G$ es un toro, entonces es conexo y
+soluble y est\'{a} contenido en un subgrupo soluble y conexo maximal, es decir,
+en un subgrupo de Borel. A un par $(B,T)$ donde $T\leq G$ es un toro maximal y
+$B\leq G$ es un subgrupo de Borel que lo contiene se lo llama \emph{par de %
+Borel}. As\'{\i}, todo toro maximal forma parte de un par de Borel y, como hay
+al menos, un par de Borel y los subgrupos de Borel son todos conjugados, todo
+subgrupo de Borel forma parte de un par de Borel.
+
+\begin{teoTorosConjugados}\label{thm:torosconjugados}
+	\footnote{
+		\cite[Theorem~17.10]{MilneAlgebraicGroups}
+	}
+	Dos toros maximales de $G$ son conjugados por un elemento de $G(k)$.
+\end{teoTorosConjugados}
+
+% \begin{coroNormalizadorDelToro}\label{coro:normalizadordeltoro}
+	% \footnote{
+		% \cite[Corollary~17.11]{MilneAlgebraicGroups}
+	% }
+	% Sea $T\leq G$ un toro maximal y sea $B\geq T$ un subgrupo de Borel que
+	% lo contiene. El normalizador $\normaliza[G](T)$ act\'{u}a
+	% transitivamente en el conjunto de conjugados de $B$ que contienen a
+	% $T$.
+% \end{coroNormalizadorDelToro}
+% 
+% \begin{proof}
+	% Si $g\in G(k)$ y $gBg^{-1}\supset T$, entonces
+	% $T,gTg^{-1}\subset gBg^{-1}$. Pero $h(gTg^{-1})h^{-1}=T$ para cierto
+	% $h\in gBg^{-1}$ (tomando $G=gBg^{-1}$ en el Teorema~%
+	% \ref{thm:torosconjugados}). En particular, $hg\in\normaliza[G](T)$ y
+	% $(hg)B(hg)^{-1}=gBg^{-1}$.
+% \end{proof}
+% 
+% \begin{teoParesConjugados}\label{thm:paresconjugados}
+	% \footnote{
+		% \cite[Proposition~17.13]{MilneAlgebraicGroups}
+	% }
+	% Dos pares de Borel de $G$ son conjugados por un elemento de $G(k)$.
+% \end{teoParesConjugados}
+% 
+% \begin{proof}
+	% Sean $(B,T)$ y $(B',T')$ dos pares de Borel. Existe $g\in G(k)$ tal que
+	% $gTg^{-1}\subset gB'g^{-1}=B$ y existe $h\in B(k)$ tal que
+	% $h(gT'g^{-1})h^{-1}=T$. En particular, $(hg)B'(hg)^{-1}=B$,
+	% tambi\'{e}n.
+% \end{proof}
+% 
+\begin{defParabolico}\label{def:parabolico}
+	\footnote{
+		C.f. \cite[Theorem~17.16]{MilneAlgebraicGroups}
+	}
+	Un \emph{subgrupo parab\'{o}lico} de $G$ es un subgrupo $P\leq G$ que
+	contiene alg\'{u}n subgrupo de Borel.
+\end{defParabolico}
+
+El grupo $G$ es, trivialmente, parab\'{o}lico.
+
+\begin{propoParabolicosPropios}\label{propo:variedades:parabolicospropios}
+	\footnote{
+		\cite[Corollary~17.17]{MilneAlgebraicGroups}
+	}
+	El grupo $G$ contiene subgrupos parab\'{o}licos propios, si y s\'{o}lo
+	si no es soluble.
+\end{propoParabolicosPropios}
+
+\begin{proof}
+	Si $G$ es soluble, entonces $B=G$ es el \'{u}nico subgrupo de Borel y,
+	en particular $P=G$ es el \'{u}nico subgrupo parab\'{o}lico.
+	Rec\'{\i}procamente, si $G$ no es soluble y $B\leq G$ es un subgrupo de
+	Borel, necesariamente, $B\not =G$. El subgrupo $B$ es un subgrupo
+	parab\'{o}lico propio.
+\end{proof}
+
+\begin{obsParabolicosPropios}
+	En esta demostraci\'{o}n usamos que siempre existen subgrupos de Borel
+	si $G$ es algebraico y suave, definido sobre un cuerpo algebraicamente
+	cerrado.
+\end{obsParabolicosPropios}
+
+\begin{ejemploTriangulares}\label{ejemplo:triangulares:parabolicos}
+	En $G=\GL[4]$, los subgrupos
+	\begin{align*}
+		\left\{ \begin{bmatrix}
+				* & * & * & * \\
+				* & * & * & * \\
+				& & * & * \\
+				& & * & *
+			\end{bmatrix} \right\}
+		& \quad\text{y}\quad
+		\left\{ \begin{bmatrix}
+				* & * & * & * \\
+				& * & * & * \\
+				& * & * & * \\
+				& & & *
+			\end{bmatrix} \right\}
+	\end{align*}
+	%
+	contiene a $\triangulares[4]$ y son parab\'{o}licos. Un poco m\'{a}s en
+	general, en $\GL[n]$, los subgrupos de matrices triangulares superiores
+	en bloques (para cualquier elecci\'{o}n de tama\~{n}o de los bloques
+	diagonales) contiene a $\triangulares[n]$ y son parab\'{o}licos.%
+	\footnote{
+		Ver el Ejemplo~\ref{ejemplo:}.
+	}
+\end{ejemploTriangulares}
+
+La descripci\'{o}n de los subgrupos parab\'{o}licos del Ejemplo~%
+\ref{ejemplo:triangulares:parabolicos} se puede dar en t\'{e}rminos de
+banderas. Dados un $k$-espacio vectorial $V$ y banderas $F=(V_i)_i$ y
+$\widetilde F=(\widetilde V_j)_j$ en $V$, decimos que \emph{$\widetilde F$ %
+extiende a $F$}, si, para cada \'{\i}ndice $i$, existe $j=j(i)$ tal que
+$V_i=\widetilde V_j$. Si llamamos $P_F$ al estabilizador de $F$ y
+$B_{\widetilde F}$ al estabilizador de $\widetilde F$, entonces $P_F$ es
+parab\'{o}lico, porque $P_F\geq B_{\widetilde F}$ y $B_{\widetilde F}$ es de
+Borel.%
+\footnote{
+	Esto no significa que todos los subgrupos parab\'{o}licos de $\GL[n]$
+	sean de esta forma, es decir, conjugados a un subgrupo de matrices
+	triangulares superiores en bloques. Que esto es as\'{\i} es
+	consecuencia de la expresi\'{o}n \eqref{eq:}.
+}
+
+\begin{obsBorel}\label{obs:borel:parabolicos}
+	Los subgrupos de Borel son los subgrupos parab\'{o}licos minimales.
+\end{obsBorel}

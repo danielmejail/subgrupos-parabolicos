@@ -1,0 +1,285 @@
+\theoremstyle{plain}
+\newtheorem{teoElGrupoDeUnaCurva}{Teorema}[section]
+\newtheorem{propoCocaracteresYParabolicosPropios}[teoElGrupoDeUnaCurva]%
+	{Proposici\'{o}n}
+\newtheorem{teoParabolicoSemidirecto}[teoElGrupoDeUnaCurva]{Proposici\'{o}n}
+
+\theoremstyle{definition}
+\newtheorem{defReductivo}[teoElGrupoDeUnaCurva]{Definici\'{o}n}
+\newtheorem{ejemploCurvas}[teoElGrupoDeUnaCurva]{Ejemplo}
+
+%-------------
+
+A continuaci\'{o}n, veremos c\'{o}mo asociarle un esquema a un cocar\'{a}cter
+del grupo $G$ y veremos que, en el caso de los grupos reductivos, esta
+construcci\'{o}n da lugar a los subgrupos parab\'{o}licos de $G$.
+
+Sean $X$ una variedad af\'{\i}n y $\cal O(X)$ su anillo de funciones regulares.
+Sea $\lambda:\,\afin[1]\setmin\{0\}\rightarrow X$ un morfismo. En t\'{e}rminos
+de morfismos de $k$-\'{a}lgebras, $\lambda=\pull\varphi$ para cierto morfismo
+$\varphi:\,\cal O(X)\rightarrow k[T,T^{-1}]$. Decimos que \emph{existe el %
+l\'{\i}mite de $\lambda(t)$ cuando $t$ tiende a $0$}, si $\lambda$ se extiende
+a un morfismo $\tilde\lambda:\,\afin[1]\rightarrow X$.%
+\footnote{
+	\cite[\S~13.b]{MilneAlgebraicGroups}
+}
+En t\'{e}rminos de $\varphi$, pedimos que se correstrinja a
+$\tilde\varphi:\,\cal O(X)\rightarrow k[T]$, es decir que
+$\varphi(f)=f\circ\lambda$ sea un polinomio para toda $f\in\cal O(X)$.
+Definimos, en ese caso,
+\begin{align*}
+	\lim_{t\to 0}\,\varphi(t) & \,:=\,\varphi(0)
+	\text{ .}
+\end{align*}
+%
+
+Sea, ahora, $\lambda:\,\multiplicativo\rightarrow G$ un cocar\'{a}cter (un
+cocar\'{a}cter es como una curva en $G$). Entonces $\lambda$ determina una
+acci\'{o}n en $G$ por conjugaci\'{o}n:
+\begin{align*}
+	t\cdot g & \,=\,\lambda(t)\,g\,\lambda(t)^{-1}
+	\text{ .}
+\end{align*}
+%
+Definimos un grupo algebraico $P(\lambda)$ asociado a esta acci\'{o}n por%
+\footnote{
+	\cite[Proposition~13.28]{MilneAlgebraicGroups}
+}
+\begin{align*}
+	P(\lambda)(R) & \,:=\,\Big\{g\in G(R)\,:\,\text{existe }
+		\lim_{t\to 0}\,t\cdot g\Big\}
+	\text{ .}
+\end{align*}
+%
+
+\begin{ejemploCurvas}\label{ejemplo:curvas:sl}
+	\footnote{
+		\cite[Example~13.31]{MilneAlgebraicGroups}
+	}
+	En $G=\SL[2]$, sea $\lambda$ el cocar\'{a}cter
+	\begin{math}
+		t\mapsto \diag(t,t^{-1})=
+			\left[\begin{smallmatrix}
+				t & \\
+				& t^{-1}
+			\end{smallmatrix}\right]
+	\end{math}. La acci\'{o}n en $G$ est\'{a} dada por
+	\begin{align*}
+		\begin{bmatrix} t & \\ & t^{-1} \end{bmatrix}\,
+		\begin{bmatrix} a & b \\ c & d \end{bmatrix}\,
+		\begin{bmatrix} t & \\ & t^{-1} \end{bmatrix}^{-1} & \,=\,
+		\begin{bmatrix}
+			a & t^2 b \\ t^{-2}c & d
+		\end{bmatrix}
+	\end{align*}
+	%
+	y el l\'{\i}mite $t\to 0$ existe, si y s\'{o}lo si $c=0$. Entonces
+	\begin{align*}
+		P(\lambda) & \,=\,\bigg\{
+			\begin{bmatrix} a & b \\ & a^{-1} \end{bmatrix}
+			\bigg\}
+		\text{ .}
+	\end{align*}
+	%
+\end{ejemploCurvas}
+
+\begin{ejemploCurvas}\label{ejemplo:curvas:gl}
+	\footnote{
+		\cite[Example~13.32]{MilneAlgebraicGroups}
+	}
+	En $G=\GL[3]$, $\lambda:\,t\mapsto\diag(t^{m_1},t^{m_2},t^{m_3})$ con
+	$m_1\geq m_2\geq m_3$ fijos. Entonces
+	\begin{align*}
+		\text{si } m_1>m_2>m_3 \text{ ,} & \qquad
+			P(\lambda) \,=\,\left\{
+				\begin{bmatrix}
+					* & * & * \\
+					& * & * \\
+					& & *
+				\end{bmatrix}
+				\right\} \text{ ,} \\
+		\text{si } m_1=m_2>m_3 \text{ ,} & \qquad
+			P(\lambda) \,=\,\left\{
+				\begin{bmatrix}
+					* & * & * \\
+					* & * & * \\
+					& & *
+				\end{bmatrix}
+				\right\}
+			\text{ .}
+	\end{align*}
+	%
+\end{ejemploCurvas}
+
+\begin{defReductivo}\label{def:reductivo}
+	\footnote{
+		\cite[\S~6.46]{MilneAlgebraicGroups}
+	}
+	Dado un grupo algebraico suave $G$, su \emph{radical unipotente} es el
+	subgrupo normal, suave, conexo y unipotente maximal; lo denotamos
+	$R_u(G)$. Un grupo algebraico $G$ es \emph{reductivo}, si es suave,
+	conexo y $R_u(G_{\algclos k})=e$.
+\end{defReductivo}
+
+\begin{teoElGrupoDeUnaCurva}\label{thm:elgrupodeunacurva}
+	\footnote{
+		\cite[Theorem~25.1]{MilneAlgebraicGroups}
+	}
+	Sea $G$ un grupo reductivo y sea
+	$\lambda:\,\multiplicativo\rightarrow G$ un cocar\'{a}cter. Entonces
+	$P(\lambda)$ es un grupo parab\'{o}lico y as\'{\i} son todos.
+\end{teoElGrupoDeUnaCurva}
+
+\begin{propoCocaracteresYParabolicosPropios}%
+	\label{propo:cocaracteres:parabolicospropios}
+	\footnote{
+		\cite[Proposition~25.2]{MilneAlgebraicGroups}
+	}
+	Si $G$ es reductivo, entonces $G$ contiene subgrupos parab\'{o}licos
+	propios, si y s\'{o}lo si posee un toro escindido no central.
+\end{propoCocaracteresYParabolicosPropios}
+
+\begin{proof}
+	Demostramos \'{u}nicamente que la condici\'{o}n es necesaria. Si no hay
+	toros escindidos no centrales en $G$, la imagen de cualquier
+	cocar\'{a}cter $\lambda:\,\multiplicativo\rightarrow G$ debe caer en el
+	centro $\lambda(\multiplicativo)\subset\centre(G)$ y, por lo tanto,
+	$P(\lambda)=G$. Pero todos los subgrupos parab\'{o}licos son de la
+	forma $P(\lambda)$ para alg\'{u}n cocar\'{a}cter.
+\end{proof}
+
+Para demostrar la suficiencia, tenemos que definir, dado un cocar\'{a}cter
+$\lambda:\,\multiplicativo\rightarrow G$, el subgrupo%
+\footnote{
+	\cite[Proposition~13.29]{MilneAlgebraicGroups}
+}
+$U(\lambda)\leq P(\lambda)$ que a cada $k$-\'{a}lgebra $R$ le asigna
+\begin{align*}
+	U(\lambda)(R) & \,=\,\Big\{g\in G(R)\,:\,\lim_{t\to 0}\,t\cdot g=e
+		\Big\}
+	\text{ .}
+\end{align*}
+%
+Necesitaremos, tambi\'{e}n, el centralizador
+$Z(\lambda)=\centraliza[G](\lambda\,\multiplicativo)$.
+
+\begin{ejemploCurvas}\label{ejemplo:unipotente:curvas:sl}
+	Siguiendo con el Ejemplo~\ref{ejemplo:curvas:sl}, para el
+	cocar\'{a}cter $\lambda(t)=\diag(t,t^{-1})$, el centralizador de
+	$\lambda(\multiplicativo)$ est\'{a} dado por
+	\begin{align*}
+		Z(\lambda) & \,=\,\bigg\{
+			\begin{bmatrix} a & \\ & a^{-1} \end{bmatrix}
+			\bigg\}
+		\text{ ,}
+	\end{align*}
+	%
+	que es el toro maximal de $\SL[2]$. Si
+	\begin{math}
+		g=\left[\begin{smallmatrix}
+			a & b \\ & d
+		\end{smallmatrix}\right]\in P(\lambda)
+	\end{math}, el l\'{\i}mite es
+	\begin{math}
+		\lim_{t\to 0}\,t\cdot g=
+			\left[\begin{smallmatrix}
+				a & \\ & d
+			\end{smallmatrix}\right]
+	\end{math}. De esto, deducimos que
+	\begin{align*}
+		U(\lambda) & \,=\,\bigg\{
+			\begin{bmatrix} 1 & b \\ & 1 \end{bmatrix}
+			\bigg\}
+		\text{ .}
+	\end{align*}
+	%
+\end{ejemploCurvas}
+
+\begin{ejemploCurvas}\label{ejemplo:unipotente:curvas:gl}
+	En el Ejemplo~\ref{ejemplo:curvas:gl}, $G=\GL[3]$ y
+	$\lambda(t)=\diag(t^{m_1},t^{m_2},t^{m_3})$. La acci\'{o}n est\'{a}
+	dada por
+	\begin{align*}
+		\lambda(t)\,
+			\begin{bmatrix}
+				a & b & c \\
+				d & e & f \\
+				g & h & i
+			\end{bmatrix}\,\lambda(t)^{-1} & \,=\,
+		\begin{bmatrix}
+			a & t^{m_1-m_2}b & t^{m_1-m_3}c \\
+			t^{m_2-m_1}d & e & t^{m_2-m_3}f \\
+			t^{m_3-m_1}g & t^{m_3-m_2}h & i
+		\end{bmatrix}
+		\text{ .}
+	\end{align*}
+	%
+	Si $m_1=m_2>m_3$,
+	\begin{align*}
+		Z(\lambda) \,=\,\left\{
+			\begin{bmatrix}
+				* & * & \\
+				* & * & \\
+				& & *
+			\end{bmatrix}\right\} & \quad\text{y}\quad
+		U(\lambda) \,=\,\left\{
+			\begin{bmatrix}
+				1 & 0 & * \\
+				0 & 1 & * \\
+				& & 1
+			\end{bmatrix}\right\}
+		\text{ .}
+	\end{align*}
+	%
+\end{ejemploCurvas}
+
+\begin{teoParabolicoSemidirecto}\label{thm:parabolicosemidirecto}
+	\footnote{
+		\cite[Theorem~13.33]{MilneAlgebraicGroups}. Este resultado
+		tambi\'{e}n garantiza que $P$, $U$ y $Z$ son conexos, si $G$ lo
+		es.
+	}
+	Si $G$ es un grupo algebraico suave, entonces $P(\lambda)$,
+	$U(\lambda)$ y $Z(\lambda)$ son subgrupos algebraicos suaves de $G$.
+	Adem\'{a}s, $U(\lambda)$ es normal en $P(\lambda)$ y unipotente%
+	\footnote{
+		\cite[Example~14.13]{MilneAlgebraicGroups}
+	}
+	y la multiplicaci\'{o}n induce un isomorfismo
+	\begin{equation}
+		\label{eq:parabolicosemidirecto}
+		U(\lambda)\rtimes Z(\lambda)\,\rightarrow\,P(\lambda)
+		\text{ .}
+	\end{equation}
+	%
+\end{teoParabolicoSemidirecto}
+
+Un grupo algebraico $G$ (arbitrario) se dice \emph{unipotente},%
+\footnote{
+	\cite[\S~6.45]{MilneAlgebraicGroups}
+}
+si toda representaci\'{o}n no nula posee un vector fijo (un autovector con
+autovalor asociado $1$). En tal caso, si $(V,\rho)$ es una representaci\'{o}n
+de dimensi\'{o}n $n<\infty$, existe una base de $V$ con respecto a la cual
+$\rho(G)\subset\unipotentes[n]$ (el subgrupo de las matrices triangulares
+superiores $\triangulares[n]$ con $1$ en la diagonal).
+
+\begin{proof}[Fin de la demostraci\'{o}n de %
+	\ref{propo:cocaracteres:parabolicospropios}]
+	Si un grupo reductivo $G$ no posee subgrupos parab\'{o}licos propios,
+	entonces, para todo cocar\'{a}cter $\lambda$, vale que $P(\lambda)=G$.
+	Por otro lado, como $U(\lambda)$ es unipotente y normal en $G$
+	reductivo, $U(\lambda)=e$. En particular,
+	$\centraliza(\lambda\,\multiplicativo)=Z(\lambda)=G$ y
+	$\lambda(\multiplicativo)\subset G$. Si
+	$T\simeq\multiplicativo^k\leq G$ es un toro escindido de $G$, entonces
+	existen cocaracteres
+	$\lista{\lambda}{k}:\,\multiplicativo\rightarrow G$ tales que
+	\begin{align*}
+		T & \,=\,\lambda_1(\multiplicativo)\,\times\,\cdots\,\times\,
+			\lambda_k(\multiplicativo) \,\subset\,\centre(G)
+		\text{ .}
+	\end{align*}
+	%
+	En definitiva, todo toro escindido es central.
+\end{proof}
