@@ -1,17 +1,14 @@
-En esta secci\'{o}n, $G$ denota un grupo algebraico conexo sobre un cuerpo
-algebraicamente cerrado $k=\algclos k$. Asumimos, tambi\'{e}n, que $G$ es
-geom\'{e}tricamente reducido, o, lo que es lo mismo, un grupo algebraico suave,
-es decir, una variedad.%
-\footnote{
-	\cite[pp.~12,13]{MilneAlgebraicGroups}
-}
-
 \begin{defBorel}\label{def:borel}
 	\footnote{
 		\cite[Definition~17.6]{MilneAlgebraicGroups}
 	}
 	Un \emph{subgrupo de Borel} de $G$ es un subgrupo $B\leq G$ soluble,
-	conexo y maximal con respecto a estas propiedades.
+	conexo y maximal con respecto a estas propiedades.%
+	\footnote{
+		Si pedimos, adem\'{a}s, que $B$ sea normal, obtenemos el
+		\emph{radical} de $G$
+		\cite[Definition~1.14]{GetzHahnAutomorphicRepresentations}.
+	}
 \end{defBorel}
 
 \begin{obsBorel}\label{obs:def:borel}
@@ -191,13 +188,13 @@ Esta propiedad del grupo general lineal es v\'{a}lida en general.
 	}
 \end{obsBorel}
 
-Si $T\leq G$ es un toro, entonces es conexo y
-soluble y est\'{a} contenido en un subgrupo soluble y conexo maximal, es decir,
-en un subgrupo de Borel. A un par $(B,T)$ donde $T\leq G$ es un toro maximal y
-$B\leq G$ es un subgrupo de Borel que lo contiene se lo llama \emph{par de %
-Borel}. As\'{\i}, todo toro maximal forma parte de un par de Borel y, como hay
-al menos, un par de Borel y los subgrupos de Borel son todos conjugados, todo
-subgrupo de Borel forma parte de un par de Borel.
+Si $T\leq G$ es un toro, entonces es conexo y soluble y est\'{a} contenido en
+un subgrupo soluble y conexo maximal, es decir, en un subgrupo de Borel. A un
+par $(B,T)$ donde $T\leq G$ es un toro maximal y $B\leq G$ es un subgrupo de
+Borel que lo contiene se lo llama \emph{par de Borel}. As\'{\i}, todo toro
+maximal forma parte de un par de Borel y, como hay al menos, un par de Borel y
+los subgrupos de Borel son todos conjugados, todo subgrupo de Borel forma parte
+de un par de Borel.
 
 \begin{teoTorosConjugados}\label{thm:torosconjugados}
 	\footnote{
@@ -206,38 +203,38 @@ subgrupo de Borel forma parte de un par de Borel.
 	Dos toros maximales de $G$ son conjugados por un elemento de $G(k)$.
 \end{teoTorosConjugados}
 
-% \begin{coroNormalizadorDelToro}\label{coro:normalizadordeltoro}
-	% \footnote{
-		% \cite[Corollary~17.11]{MilneAlgebraicGroups}
-	% }
-	% Sea $T\leq G$ un toro maximal y sea $B\geq T$ un subgrupo de Borel que
-	% lo contiene. El normalizador $\normaliza[G](T)$ act\'{u}a
-	% transitivamente en el conjunto de conjugados de $B$ que contienen a
-	% $T$.
-% \end{coroNormalizadorDelToro}
-% 
-% \begin{proof}
-	% Si $g\in G(k)$ y $gBg^{-1}\supset T$, entonces
-	% $T,gTg^{-1}\subset gBg^{-1}$. Pero $h(gTg^{-1})h^{-1}=T$ para cierto
-	% $h\in gBg^{-1}$ (tomando $G=gBg^{-1}$ en el Teorema~%
-	% \ref{thm:torosconjugados}). En particular, $hg\in\normaliza[G](T)$ y
-	% $(hg)B(hg)^{-1}=gBg^{-1}$.
-% \end{proof}
-% 
-% \begin{teoParesConjugados}\label{thm:paresconjugados}
-	% \footnote{
-		% \cite[Proposition~17.13]{MilneAlgebraicGroups}
-	% }
-	% Dos pares de Borel de $G$ son conjugados por un elemento de $G(k)$.
-% \end{teoParesConjugados}
-% 
-% \begin{proof}
-	% Sean $(B,T)$ y $(B',T')$ dos pares de Borel. Existe $g\in G(k)$ tal que
-	% $gTg^{-1}\subset gB'g^{-1}=B$ y existe $h\in B(k)$ tal que
-	% $h(gT'g^{-1})h^{-1}=T$. En particular, $(hg)B'(hg)^{-1}=B$,
-	% tambi\'{e}n.
-% \end{proof}
-% 
+\begin{coroNormalizadorDelToro}\label{coro:normalizadordeltoro}
+	\footnote{
+		\cite[Corollary~17.11]{MilneAlgebraicGroups}
+	}
+	Sea $T\leq G$ un toro maximal y sea $B\geq T$ un subgrupo de Borel que
+	lo contiene. El normalizador $\normaliza[G](T)$ act\'{u}a
+	transitivamente en el conjunto de conjugados de $B$ que contienen a
+	$T$.
+\end{coroNormalizadorDelToro}
+
+\begin{proof}
+	Si $g\in G(k)$ y $gBg^{-1}\supset T$, entonces
+	$T,gTg^{-1}\subset gBg^{-1}$. Pero $h(gTg^{-1})h^{-1}=T$ para cierto
+	$h\in gBg^{-1}$ (tomando $G=gBg^{-1}$ en el Teorema~%
+	\ref{thm:torosconjugados}). En particular, $hg\in\normaliza[G](T)$ y
+	$(hg)B(hg)^{-1}=gBg^{-1}$.
+\end{proof}
+
+\begin{teoParesConjugados}\label{thm:paresconjugados}
+	\footnote{
+		\cite[Proposition~17.13]{MilneAlgebraicGroups}
+	}
+	Dos pares de Borel de $G$ son conjugados por un elemento de $G(k)$.
+\end{teoParesConjugados}
+
+\begin{proof}
+	Sean $(B,T)$ y $(B',T')$ dos pares de Borel. Existe $g\in G(k)$ tal que
+	$gTg^{-1}\subset gB'g^{-1}=B$ y existe $h\in B(k)$ tal que
+	$h(gT'g^{-1})h^{-1}=T$. En particular, $(hg)B'(hg)^{-1}=B$,
+	tambi\'{e}n.
+\end{proof}
+
 \begin{defParabolico}\label{def:parabolico}
 	\footnote{
 		C.f. \cite[Theorem~17.16]{MilneAlgebraicGroups}

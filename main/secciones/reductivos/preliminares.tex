@@ -1,0 +1,83 @@
+\begin{teoParabolicosYEscindidos}\label{thm:parabolicosyescindidos}
+	\footnote{
+		C.f. \cite[Theorem~25.6 (b)]{MilneAlgebraicGroups}
+	}
+	Sea $P\leq G$ un subgrupo parab\'{o}lico y sea $S\leq P$ un toro
+	escindido maximal \emph{de $P$}. Entonces $\centraliza[G](S)\leq P$
+	(centralizador \emph{en $G$}).
+\end{teoParabolicosYEscindidos}
+
+De esto deducimos que, si $T\geq S$ es un toro que lo contiene, entonces
+$T\leq P$. En particular, todo subgrupo parab\'{o}lico de $G$ contiene el
+centralizador de un toro escindido maximal y los toros escindidos maximales de
+un parab\'{o}lico son escididos maximales del grupo $G$. Podemos, entonces,
+agrupar los subgrupos parab\'{o}licos en funci\'{o}n de si contienen o no al
+centralizador de un toro escindido maximal:
+\begin{align*}
+	\Big\{P\leq G\text{ parab. (min.)}\Big\} & \,=\,
+		\bigcup_{
+			\begin{smallmatrix}
+				S\leq G \\[1pt]
+				\text{esc. max.}
+			\end{smallmatrix}}\,
+			\Big\{ P\leq G\text{ parab. (min.)}\,:\,
+				P\geq\centraliza[G](S)\Big\}
+	\text{ .}
+\end{align*}
+%
+
+Expresado de otra manera, an\'{a}logamente a lo que sucede en el caso
+algebraicamente cerrado entre subgrupos de Borel y toros maximales, todo
+subgrupo parab\'{o}lico minimal $P\leq G$ forma parte de un par $(P,S)$ donde
+$S$ es un toro escindido maximal contenido en $P$.
+
+\begin{teoParabolicosConjugados}\label{thm:parabolicosconjugados}
+	\footnote{
+		\cite[Theorem~25.8]{MilneAlgebraicGroups}
+	}
+	Dos subgrupos parab\'{o}licos minimales de $G$ son conjugados por un
+	elemento de $G(k)$.
+\end{teoParabolicosConjugados}
+
+\begin{teoEscindidosConjugados}\label{thm:escindidosconjugados}
+	\footnote{
+		\cite[Theorem~25.10]{MilneAlgebraicGroups}
+	}
+	Dos toros escindidos maximales de $G$ son conjugados por un elemento de
+	$G(k)$.
+\end{teoEscindidosConjugados}
+
+Sea $S\leq G$ un toro escindido maximal de $G$. Sea $P_0$ un subgrupo
+parab\'{o}lico minimal (alguno existe) y sea $S_0\leq G$ un toro escindido
+maximal de $G$ tal que $S_0\leq P_0$. Por el Teorema~%
+\ref{thm:escindidosconjugados}, existe $g\in G(k)$ tal que $S=gS_0g^{-1}$.
+Entonces $S$ est\'{a} contenido en el subgrupo parab\'{o}lico minimal
+$gP_0g^{-1}$.%
+\footnote{
+	Para ver que es minimal, recurrimos al Teorema~%
+	\ref{thm:parabolicosconjugados}. Si $P_0'\leq gP_0g^{-1}$ es
+	parab\'{o}lico minimal, existe $h\in G(k)$ tal que $hP_0h^{-1}=P_0'$.
+	En particular, $(g^{-1}h)P_0(g^{-1}h)^{-1}$ es parab\'{o}lico y
+	est\'{a} contenido en $P_0$. Por minimalidad de $P_0$, deben ser
+	iguales y, as\'{\i}, $P_0'=gP_0g^{-1}$, tambi\'{e}n.
+}
+En definitiva, todo toro escindido maximal $S$ forma parte de un par $(P,S)$
+donde $P\leq G$ es un subgrupo parab\'{o}lico minimal que lo contiene.
+
+Tambi\'{e}n son v\'{a}lidos los an\'{a}logos de \ref{coro:normalizadordeltoro}
+y de \ref{thm:paresconjugados}. Se demuestran de manera similar.
+
+\begin{coroNormalizadorDelEscindido}\label{coro:normalizadordelescindido}
+	Sea $S\leq G$ un toro escindido maximal y sea $P\geq S$ un subgrupo
+	parab\'{o}lico minimal que lo contiene. El normalizador
+	$\normaliza[G](S)$ act\'{u}a transitivamente en el conjunto de
+	conjugados de $P$ que contienen a $S$.
+\end{coroNormalizadorDelEscindido}
+
+\begin{teoParesParabolicoEscindidoConjugados}%
+	\label{thm:paresparabolicoescindidoconjugados}
+	Dos pares $(P,S)$ y $(P',S')$ conformados por subgrupos parab\'{o}licos
+	minimales $P,P'$ y toros escindidos maximales $S,S'$ tales que
+	$P\geq S$ y $P'\geq S'$ son conjugados por un elemento de $G(k)$.
+\end{teoParesParabolicoEscindidoConjugados}
+

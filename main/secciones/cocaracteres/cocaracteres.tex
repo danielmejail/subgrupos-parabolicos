@@ -7,6 +7,7 @@
 \theoremstyle{definition}
 \newtheorem{defReductivo}[teoElGrupoDeUnaCurva]{Definici\'{o}n}
 \newtheorem{ejemploCurvas}[teoElGrupoDeUnaCurva]{Ejemplo}
+\newtheorem{obsParabolicoSemidirecto}[teoElGrupoDeUnaCurva]{Observaci\'{o}n}
 
 %-------------
 
@@ -118,7 +119,12 @@ Definimos un grupo algebraico $P(\lambda)$ asociado a esta acci\'{o}n por%
 	Dado un grupo algebraico suave $G$, su \emph{radical unipotente} es el
 	subgrupo normal, suave, conexo y unipotente maximal; lo denotamos
 	$R_u(G)$. Un grupo algebraico $G$ es \emph{reductivo}, si es suave,
-	conexo y $R_u(G_{\algclos k})=e$.
+	conexo y $R_u(G_{\algclos k})=e$.%
+	\footnote{
+		En general, $R_u(G_{\algclos k})\geq R_u(G)_{\algclos k}$, pero
+		pueden ser diferentes \cite[\S~6.47]{MilneAlgebraicGroups},
+		\cite[pp.xiv,xv]{ConradGabberPrasadPseudoreductive}.
+	}
 \end{defReductivo}
 
 \begin{teoElGrupoDeUnaCurva}\label{thm:elgrupodeunacurva}
@@ -248,7 +254,7 @@ $Z(\lambda)=\centraliza[G](\lambda\,\multiplicativo)$.
 	y la multiplicaci\'{o}n induce un isomorfismo
 	\begin{equation}
 		\label{eq:parabolicosemidirecto}
-		U(\lambda)\rtimes Z(\lambda)\,\rightarrow\,P(\lambda)
+		U(\lambda)\rtimes Z(\lambda)\,\xrightarrow\sim\,P(\lambda)
 		\text{ .}
 	\end{equation}
 	%
@@ -283,3 +289,17 @@ superiores $\triangulares[n]$ con $1$ en la diagonal).
 	%
 	En definitiva, todo toro escindido es central.
 \end{proof}
+
+\begin{obsParabolicoSemidirecto}\label{obs:parabolicosemidirecto}
+	Siguiendo con el enunciado del Teorema~\ref{thm:parabolicosemidirecto},
+	si $G$ es, adem\'{a}s, un grupo reductivo, entonces vale que%
+	\footnote{
+		\cite[Proposition~17.60]{MilneAlgebraicGroups}
+	}
+	\begin{align*}
+		R_u(P(\lambda)) \,=\,U(\lambda) & \quad\text{y}\quad
+		R_u(P(\lambda)_{\algclos k}) \,=\,U(\lambda)_{\algclos k}
+		\text{ .}
+	\end{align*}
+	%
+\end{obsParabolicoSemidirecto}
